@@ -52,7 +52,7 @@ function loadLocal(){
 async function loadItems(){
   $("error").innerHTML="";
   try{
-    if(production){const {data,error}=await client.rpc("claim_validation_items",{p_limit:20});if(error)throw error;current=data||[];}else loadLocal();
+    if(production){const {data,error}=await client.rpc("claim_validation_items",{p_limit:1});if(error)throw error;current=data||[];}else loadLocal();
     render();
   }catch(e){$("error").innerHTML='<div class="error"><b>Erro:</b> '+esc(e.message||e)+'</div>';}
 }

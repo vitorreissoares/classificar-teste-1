@@ -199,7 +199,7 @@ async function save(i){
   const fmtMode=root.querySelector(`input[name="fmt-${i}"]:checked`).value;
   const catVal=catMode==="ok"?"OK":root.querySelector('select[name="cat-select"]').value;
   const subVal=subMode==="ok"?"OK":root.querySelector('select[name="sub-select"]').value;
-  const fmtVal=fmtMode==="ia"?"Produzido por IA":(r.formato?.trim()||null);
+  const fmtVal=fmtMode==="ia"?"Produzido por IA":null;
 
   if(catMode==="corrigir"&&!catVal)return alert("Selecione a categoria corrigida.");
   if(catMode==="corrigir"&&subMode==="ok")return alert("Como a categoria foi corrigida, valide também a subcategoria conforme a nova categoria.");
